@@ -69,12 +69,13 @@ h3 {
 text-align: center;
 font-family: OpenSans-regular, Arial, sans-serif;
 color: #fff;
-font-size: 26px;
+font-size: 13px;
 line-height: 36px;
 display: block;
 text-transform: uppercase;
 position: relative;
 z-index: 2;
+margin-top: 22px;
 }
 @font-face {
     font-family: OpenSans-regular;
@@ -111,8 +112,9 @@ z-index: 2;
 .page-content{
     margin-top: 40px;
 }
+
 .trends {
-margin-top: 40px;
+margin-top: 24px;
 }
 .main-heading-link {
     text-decoration: none;
@@ -131,6 +133,8 @@ margin-top: 40px;
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 89px;
+    padding-bottom: 15px;
+
 }
 .trend-garden::after{
     content: "";
@@ -148,10 +152,16 @@ margin-top: 40px;
     z-index: 2;
     text-align: left;
     padding-left: 20px;
-    padding-top: 33px;
+    padding-top: 15px;
     padding-bottom: 30px;
+    padding-right: 10px;
 }
 .category-article {
+  display: flex;
+  list-style-type: none;
+  padding-left: 0;
+}
+.category-article-item {
     font-family: OpenSans-bold, Arial, sans-serif;
     font-size: 14px;
     font-weight: bold;
@@ -159,15 +169,20 @@ margin-top: 40px;
     word-spacing: 18px;
     position: relative;
     z-index: 2;
+    padding-right: 15px;
+    text-decoration: none;
   }
 .main-heading{
     text-transform: uppercase;
     font-family: OpenSans-bold, Arial, sans-serif;
     font-size: 1rem;
-    font-weight: bold;
-    color: #fff;    
+    font-weight: bold;  
     position: relative;
     z-index: 2;
+}
+.trend-heading-link{
+  color: #fff; 
+  text-decoration: none;
 }
 .trend-food {
     min-height: 233px;
@@ -249,6 +264,7 @@ margin-top: 40px;
     left: 0;
 }
 @media (max-width: 640px) and (orientation: landscape) {
+
     .trends {
         display: flex;
         flex-wrap: wrap;
@@ -305,6 +321,9 @@ margin-top: 40px;
     margin-top: 16px;
     margin-bottom: 26px;
   }
+  .main-heading-link{
+    color: inherit;
+  }
   .date-article {
     font-family: OpenSans-regular, Arial, sans-serif;
     font-weight: 400;
@@ -343,13 +362,13 @@ margin-top: 40px;
   }
   .resent-heading-link {
     text-decoration: none;
+    color: #000000;
   }
   .resent-post-header {
     text-transform: uppercase;
     font-family: OpenSans-bold, Arial, sans-serif;
     font-size: 14px;
     font-weight: bold;
-    color: #000000;
   }
   .form {
     margin-top: 60px;
@@ -489,6 +508,7 @@ margin-top: 40px;
     font-size: 12px;
     color: #b59f5b;
     padding-left: 5px;
+    vertical-align: super;
   }
   .products-pillow {
     min-width: 330px;
@@ -506,7 +526,7 @@ margin-top: 40px;
     position: absolute;
     left: 15px;
     right: 15px;
-    height: 48%;
+    top: 257px;
     bottom: 0;
   }
   .product {
@@ -557,16 +577,19 @@ margin-top: 40px;
     font-weight: bold;
     font-size: 1.5em;  
   }
+  .button-footer {
+    display: flex;
+    width: 50%;
+    min-height: 49px;
+    background-color: #b59f5b;
+  }
   .product__button {
-   width: 50%;
-   min-height: 49px;
-   font-size: 1em;
-   text-align: center;
-   background-color: #b59f5b;
    font-family: OpenSans-bold, Arial, sans-serif;
    font-weight: bold;
    font-size: 1em;
    color: #ffffff;
+   text-decoration: none;
+   margin: auto;
   }
   .products-doll {
     min-width: 330px;
@@ -584,7 +607,7 @@ margin-top: 40px;
     position: absolute;
     left: 15px;
     right: 15px;
-    height: 50%;
+    top: 255px;
     bottom: 0;
   }
   .products-frame {
@@ -603,7 +626,7 @@ margin-top: 40px;
     position: absolute;
     left: 15px;
     right: 15px;
-    height: 48%;
+    top: 257px;
     bottom: 0;
   }
   .footer {
