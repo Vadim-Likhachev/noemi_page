@@ -14,11 +14,7 @@
               <img class="noemi-logo" src="svg/noemi-logo.svg" alt="noemi-logo">
             </a>
             <nav class="header-menu">
-              <div class="button" >
-                    <button class="menu__button"></button>
-                      <button class="menu__button"></button>
-                        <button class="menu__button"></button>
-                      </div>
+              <button class="button-menu" type="button" ></button>
               <ul class="menu-list">
                 <li class="menu-list-item">
                   <a class="menu-link" href="#0">Главная</a>
@@ -45,7 +41,6 @@
             <h1>Блог о творчестве, спорте и образе жизни</h1>
           </div>
         </header>
-        <div class="page-content">
           <section class="trend">
             <h2 class="resent-posts-header">Сейчас в тренде</h2>
             <div class="trends">
@@ -93,6 +88,7 @@
        </article>
       </div>
     </section>
+    <div class="page-content">
       <main class="main">
       <article class="main-news">
         <div class="article-preview">
@@ -334,14 +330,19 @@
     </ul>
   </div>
 </section>
-</aside>
+</aside>  
+</div> 
   <section class="products">
   <h2 class="resent-posts-header">Наши изделия</h2>
-  <div class="products-pillow">
+  <div class="all_products">
+  <div class="our_products">
     <article class="product">
-      <div class="product__imgbox">
+      <picture class="product__imgbox">
+        <source srcset="images/shop-item-mobile1.jpg"  media="(max-width: 640px)">
+          <source srcset="images/shop-item-tablet1.jpg"  media="(max-width: 1199px)">
+            <source srcset="images/shop-item-desk1.jpg"  media="(min-width: 1200px)">
         <img class="product__img" src="images/shop-item-mobile1.jpg" alt="Pillow">
-      </div>
+      </picture>
       <div class="product__body">
         <div class="product__content">
           <h3 class="product__title">Подушка на диван</h3>
@@ -367,11 +368,14 @@
       </div> 
     </article>
   </div>
-    <div class="products-doll">
+    <div class="our_products">
     <article class="product">
-      <div class="product__imgbox">
+      <picture class="product__imgbox">
+        <source srcset="images/shop-item-mobilet2.jpg"  media="(max-width: 640px)">
+          <source srcset="images/shop-item-tablet2.jpg"  media="(max-width: 1199px)">
+            <source srcset="images/shop-item-desk2.jpg"  media="(min-width: 1200px)">
         <img class="product__img" src="images/shop-item-mobilet2.jpg" alt="Doll">
-      </div>
+      </picture>
       <div class="product__body">
         <div class="product__content">
           <h3 class="product__title">Кукла «Зайчик»</h3>
@@ -393,11 +397,14 @@
         </footer>
       </article>
       </div> 
-    <div class="products-frame">
+    <div class="our_products">
       <article class="product">
-        <div class="product__imgbox">
-          <img class="product__img" src="images/shop-item-mobilet3.jpg" alt="Frame">
-        </div>
+        <picture class="product__imgbox">
+          <source srcset="images/shop-item-mobilet3.jpg"  media="(max-width: 640px)">
+            <source srcset="images/shop-item-tablet3.jpg"  media="(max-width: 1199px)">
+              <source srcset="images/shop-item-desk3.jpg"  media="(min-width: 1200px)">
+          <img class="product__img" src="images/shop-item-mobilet3.jpg" alt="Pillow">
+        </picture>
         <div class="product__body">
           <div class="product__content">
             <h3 class="product__title">Шестиугольная рамка</h3>
@@ -423,8 +430,8 @@
         </div> 
       </article>
       </div>
+    </div>
     </section>
-        </div>
   <footer class="footer">
     <div class="footer-socials">
       <ul class="socials">
@@ -445,5 +452,51 @@
   </div>
 </footer>
     </div>
+    <div class="popup_hidden">
+    <div class="popup">
+    <div class="popup-content">
+      <button class="popup__close" type="button"></button>
+          <header class="feedback__header">
+            <h3 class="feedback__title">Ваш фидбек</h3>
+          </header>
+          <div class="feedback">
+          <form class="feedback__form">
+          <div class="feedback__content">
+              <label class="select-group">
+                <span class="label">Как часто вы заходите на сайт?</span>
+                <select class="select">            
+                  <option value="seldome" selected>Раз в неделю или реже</option>
+                  <option value="first" selected>В первый раз </option>
+                  <option value="every_day" selected>Почти каждый день</option>
+                </select>
+              </label>
+            </div>
+            <div class="feedback__content">
+              <span class="label">Вы подписаны на e-mail рассылку?</span>
+              <div class="radio_button">
+              <label class="radio-group">
+                <input type="radio" class="radio" name="radio-group">
+                <span class="radio-group-text">Да</span>
+              </label>
+              <label class="radio-group">
+                <input type="radio" class="radio" name="radio-group">
+                <span class="radio-group-text">Нет</span>
+              </label> 
+            </div>
+            </div>
+            <div class="feedback__content">
+              <label class="field-group">
+                <span class="label">Расскажите, какой контент вы хотели бы видеть на нашем сайте?</span>
+                <textarea class="field textarea" placeholder="Может больше рецептов?" required></textarea>
+              </label>
+            </div>
+          <div class="feedback__content">
+            <button class="button-pop">Отправить</button>
+          </div>
+        </form>
+      </div>
+    </div> 
+  </div>  
+</div>	
 </body>
 </html>

@@ -4,8 +4,10 @@ h2,
 h3 {
   margin: 0;
   padding: 0;
+  font-size: 1em;
 }
-.page {
+
+body {
     position: absolute;
     top: 0;
     right: 0;
@@ -13,6 +15,7 @@ h3 {
     left: 0;
     -webkit-appearance: none;
     -moz-appearance: none;
+    margin: 0;
 }
 .header {
     min-height: 640px;
@@ -48,22 +51,41 @@ h3 {
   text-align: center;
   margin-top: 14.75rem;
 }
-.button {
+.button-menu {
     position: absolute;
-    top: 31px;
+    top: 40px;
     right: 1px;
+    display: block;
+    background: #fff;
+    width: 28px;
+    height: 4px;
+    border: none;
+    padding: 0;
+    margin: 0;
 }
-.menu__button {
+.button-menu::after, .button-menu::before {
+  content: "";
   display: block;
-  margin-bottom: 4px;
-  width: 26px;
+  background: #fff;
+  width: 28px;
   height: 4px;
-}   
+}
+.button-menu::after {
+  position: absolute;
+    top: 8px;
+
+}
+.button-menu::before {
+  position: absolute;
+   top: -8px;
+}
+@media (max-width: 1199px) {
 .menu-list {
     width: 1px;
     height: 1px;
     clip: rect(1px, 1px, 1px, 1px);
     position: absolute;
+}
 }
 .intro {
 text-align: center;
@@ -79,13 +101,13 @@ margin-top: 22px;
 }
 @font-face {
     font-family: OpenSans-regular;
-    src: url(/fonts/OpenSans-Regular.woff);
+    src: url(../fonts/OpenSans-Regular.ttf);
     font-weight: normal;
     
 }
 @font-face {
     font-family: OpenSans-bold;
-    src: url(/fonts/OpenSans-Bold.woff);
+    src: url(../fonts/OpenSans-Bold.ttf);
     font-weight: bold;  
 }
     .resent-posts-header {
@@ -134,7 +156,6 @@ margin-top: 24px;
     padding-right: 15px;
     padding-top: 89px;
     padding-bottom: 15px;
-
 }
 .trend-garden::after{
     content: "";
@@ -155,6 +176,7 @@ margin-top: 24px;
     padding-top: 15px;
     padding-bottom: 30px;
     padding-right: 10px;
+    bottom: 10px;
 }
 .category-article {
   display: flex;
@@ -226,6 +248,7 @@ margin-top: 24px;
     padding-right: 15px;
     padding-top: 89px; 
     margin-top: 3px; 
+    padding-bottom: 15px;
 }
 .trend-travel::after {
     content: "";
@@ -252,6 +275,7 @@ margin-top: 24px;
     padding-right: 15px;
     padding-top: 89px; 
     margin-top: 3px;  
+    padding-bottom: 15px;
 }
 .trend-lemon::after {
     content: "";
@@ -310,6 +334,8 @@ margin-top: 24px;
     word-spacing: 18px;
     margin-top: 16px;
     text-transform: uppercase;
+    display: flex;
+    flex-wrap: wrap;
   }
 .main-heading-info {
     font-family: OpenSans-bold, Arial, sans-serif;
@@ -341,7 +367,6 @@ margin-top: 24px;
     display: flex;
     margin-top: 22px;
     box-sizing: border-box;
-    min-width: 330px;
     padding-left: 15px;
     padding-right: 15px; 
   }
@@ -382,7 +407,6 @@ margin-top: 24px;
     position: absolute;
   }
   .search {
-    min-width: 330px;
     height: 48px;
     display: flex;
   }
@@ -409,6 +433,7 @@ margin-top: 24px;
     background-position: center;
     background-repeat: no-repeat;
     cursor: pointer;
+    border: none;
   }
   .button-discription {
     width: 1px;
@@ -423,7 +448,6 @@ margin-top: 24px;
   .newsletter {
     display: flex;
     flex-direction: column;
-    min-width: 330px;
   }
   .field-email {
     width: 100%;
@@ -452,7 +476,6 @@ margin-top: 24px;
   }
   .tags {
     margin-top: 60px;
-    min-width: 330px;
     padding-left: 15px;
     padding-right: 15px;
   }
@@ -470,7 +493,7 @@ margin-top: 24px;
     font-weight: bold;
     font-size: 12px;
     color: #000000;
-    padding: 7px 12px;
+    padding: 7px 10px;
     border: 3px solid #f3f3f1;
   }
   .tags-list-item {
@@ -478,7 +501,6 @@ margin-top: 24px;
     margin-bottom: 24px;
   }
   .categories {
-    min-width: 330px;
     margin-top: 60px;
     padding-left: 15px;
     padding-right: 15px;
@@ -510,8 +532,8 @@ margin-top: 24px;
     padding-left: 5px;
     vertical-align: super;
   }
-  .products-pillow {
-    min-width: 330px;
+  .our_products {
+
     margin-top: 27px;
     position: relative;
     padding-left: 15px;
@@ -520,7 +542,7 @@ margin-top: 24px;
     flex-direction: column;
     margin-bottom: 26px;
   }
-  .products-pillow::after {
+  .our_products::before {
     content: "";
     border: 3px solid #b59f5b;
     position: absolute;
@@ -530,7 +552,6 @@ margin-top: 24px;
     bottom: 0;
   }
   .product {
-     min-width: 290px;
      padding-left: 20px;
      padding-right: 20px; 
      padding-bottom: 27px; 
@@ -557,10 +578,12 @@ margin-top: 24px;
     font-weight: normal;
     font-size: 1em;
     color: #b59f5b;
+    position: relative;
+    z-index: 99;
   }
   .product__footer {
       display: flex;
-      justify-content: space-between
+      justify-content: space-between;
   }
   .product__prices{
       display: flex;
@@ -590,44 +613,8 @@ margin-top: 24px;
    color: #ffffff;
    text-decoration: none;
    margin: auto;
-  }
-  .products-doll {
-    min-width: 330px;
-    margin-top: 27px;
-    position: relative;
-    padding-left: 15px;
-    padding-right: 15px; 
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 26px;
-  }
-  .products-doll::after {
-    content: "";
-    border: 3px solid #b59f5b;
-    position: absolute;
-    left: 15px;
-    right: 15px;
-    top: 255px;
-    bottom: 0;
-  }
-  .products-frame {
-    min-width: 330px;
-    margin-top: 27px;
-    position: relative;
-    padding-left: 15px;
-    padding-right: 15px; 
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 26px;
-  }
-  .products-frame::after {
-    content: "";
-    border: 3px solid #b59f5b;
-    position: absolute;
-    left: 15px;
-    right: 15px;
-    top: 257px;
-    bottom: 0;
+   position: relative;
+   z-index: 99;
   }
   .footer {
   padding-left: 15px;
@@ -659,6 +646,7 @@ margin-top: 24px;
     display: block;
     margin-top: 50px;
     text-align: center;
+    margin-bottom: 47px;
   }
   .link-copyright {
     text-align: center;
@@ -668,3 +656,386 @@ margin-top: 24px;
     font-size: 12px;
     color: #999999;
   }
+  @media (min-width: 641px) and (max-width: 1199px) {
+    .header {
+      background-image: url(../images/banner-bg-tablet.jpg);
+      padding-left: 35px;
+      padding-right: 35px;
+      display: flex;
+      flex-direction: column;
+    }
+    .container {
+      display: flex;
+    }
+    .logo {
+      margin-top: 50px;
+    }
+    .noemi-logo {
+      margin-top: 0;
+    }
+    .button-menu {
+      top: 80px;
+    }
+    .intro {
+    font-size: 23px;
+    line-height: 55px;
+    margin: auto;
+    }
+    .trends {
+      display: flex;
+      flex-wrap: wrap;
+  }
+  .trend-lemon, .trend-travel, .trend-food, .trend-garden{
+      width: 50%;
+  }
+  .trend-food{
+      margin-top: 0;
+}
+.page-content {
+  display: flex;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+.main {
+  width: 60%;
+  margin-right: 35px;
+}
+.main-news {
+  padding-left: 0;
+  padding-right: 0;
+}
+.additional-block {
+  width: 40%;
+}
+.resent-post, .form, .button-search,  .form-email, .tags, .categories {
+  padding: 0;
+}
+.products {
+  padding-left: 35px;
+  padding-right: 35px;
+}
+.all_products {
+  display: flex;
+  flex-wrap: wrap;
+}
+.our_products{
+  width: 48%;
+  padding: 0;
+}
+.our_products:nth-child(2n+1) {
+  margin-right: 20px;
+}
+.our_products::before {
+  top: 192px;
+  left: 0;
+  right: 0;
+}
+}
+@media (min-width: 641px) and (max-width: 1199px) and (orientation: landscape) {
+  .trend-lemon, .trend-travel, .trend-food, .trend-garden{
+    width: 25%;
+    margin-top: 0;
+  }
+}
+@media (min-width: 1200px) {
+  .header {
+    background-image: url(../images/banner-bg.jpg);
+    display: flex;
+    flex-direction: column;
+  }
+    .container {
+    display: flex; 
+    width: 1170px;
+    justify-content: space-between;
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .button-menu {
+    height: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute;
+  }
+  .menu-list {
+    display: flex;
+    list-style-type: none;
+    margin-top: 25px;
+    margin-bottom: 0;
+  }
+  .menu-list-item:nth-child(n + 2) {
+    padding-left: 38px;
+  }
+  .menu-link {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: OpenSans-regular, Arial, sans-serif;
+    font-weight: normal;
+    font-size: 13px;
+    color: #ffffff;
+  }
+  .noemi-logo {
+    margin: 0;
+  }
+  .intro {
+    margin-top: 140px;
+    font-size: 48px;
+    line-height: 1.7;
+    margin-left: auto;
+    margin-right: auto;
+    width: 736px;
+    text-align: center;
+    padding-left: 33px;
+  }
+  .trends {
+    display: flex;
+  }
+  .trend-lemon, .trend-travel, .trend-food, .trend-garden{
+    width: calc(25% - 4px);
+    margin-top: 0;
+  }
+  .trend-garden{
+    width: 25%;
+    margin-left: 0;
+  }
+  .trend-lemon {
+    margin-right: 0;
+  }
+  .trends {
+    min-height: 320px;
+  }
+  .trend-border {
+    position: absolute;
+    bottom: 15px;
+    right: 21px;
+    left: 21px;
+  }
+  .page-content {
+    display: flex;
+    width: 1170px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+  }
+  .main{
+    width: 778px;
+  }
+  .main-news {
+    display: flex;
+    border-bottom: none;
+  }
+  .article-preview {
+    width: 381px;
+    box-sizing: border-box;
+    background-color: gray;
+  }
+  img {
+    display: block;
+  }
+  .main-article-img {
+    width: 381px;
+    height: 294px;
+  }
+  .article-info{
+    margin-top: 0;
+    margin-left: 30px;
+  }
+  .category-article{
+    margin-top: 0;
+  }
+  .date-article {
+    margin-top: 30px;
+  }
+  .main-text {
+    margin-top: 50px;
+  }
+  .additional-block {
+    width: 300px;
+  }
+  .products {
+    width: 1170px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .all_products {
+    display: flex;
+    justify-content: space-between;
+  }
+  .our_products::before {
+    top: 170px;
+  }
+  .product {
+    width: 300px;
+  }
+.footer {
+  width: 1170px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 64px;
+}
+}
+.popup {
+
+  justify-content:center;
+  align-items:center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+}
+.popup::after {
+  content: "";
+  background-color: #000000;
+  opacity: 0.7;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.popup-content {
+  width: 331px;
+  background-color: #fff;
+  padding-bottom: 30px; 
+  margin: auto;
+  z-index: 9999;
+}
+.popup__close {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  top: -25px;
+  right: -311px;
+  background-image: url(../svg/form-x.svg);
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: transparent;
+  z-index: 9999;
+}
+.feedback__header {
+  text-transform: uppercase;
+  font-family: OpenSans-bold, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: -28px;
+}
+.feedback__header::after {
+  content: "";
+  height: 3px;
+  width: 66px;
+  background-color: #b59f5b;
+  margin-top: 14px;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+}
+.feedback__title {
+margin-top: 20px;
+}
+.feedback {
+  margin-top: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 280px;
+}
+.label {
+  font-family: OpenSans-regular, Arial, sans-serif;
+  color: #000;
+  font-size: 15px;
+}
+.select {
+  width: 280px;
+  height: 48px;
+  background-color: #f3f7f5;
+  margin-top: 12px;
+  border-radius: 0;
+  background-image: url(../svg/form-arrows.svg);
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-position: 95% center;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  color: #808080;
+  padding-left: 20px;
+}
+.feedback__content {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+}
+.radio_button {
+  display: flex;
+}
+.radio {
+  position: absolute;
+  clip: rect(1px,1px,1px,1px);
+  height: 1px; 
+  width: 1px;
+}
+.radio-group {
+  margin-right: 34px;
+  display: flex;
+  margin-top: 12px;
+}
+.radio-group-text {
+  font-size: 15px;
+}
+.radio-group-text::before {
+	content: "";
+	
+	width: 23px;
+	height: 23px;
+
+	background-image: url(../svg/form-empty-circle.svg);
+	background-repeat: no-repeat;
+	background-position: center  center;
+  background-size: 20px;
+  margin-right: 8px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.radio:checked ~ .radio-group-text::before{
+  background-image:url(../svg/form-circle.svg)
+}
+.textarea {
+  border-radius: 0;
+  height: 130px;
+  width: 100%;
+  margin-top: 12px;
+  padding-top: 20px;
+}
+.button-pop {
+  height: 48px;
+  margin: auto;
+  width: 100%;
+  background-color: #b59f5b;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.popup_hidden {
+  display: none;
+}
+
+
+ 
