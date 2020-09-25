@@ -6,7 +6,13 @@ h3 {
   padding: 0;
   font-size: 1em;
 }
-
+a:hover {
+  color: red;
+}
+button:hover {
+  color: red;
+  border: 1px solid black;
+}
 body {
     position: absolute;
     top: 0;
@@ -194,6 +200,10 @@ margin-top: 24px;
     padding-right: 15px;
     text-decoration: none;
   }
+  .category-article-item-link {
+    text-decoration: none;
+    color: inherit;
+  }
 .main-heading{
     text-transform: uppercase;
     font-family: OpenSans-bold, Arial, sans-serif;
@@ -303,6 +313,7 @@ margin-top: 24px;
         padding-bottom: 15px;  
      
 }
+
 }
 .main-news {
     min-width: 330px;
@@ -336,6 +347,7 @@ margin-top: 24px;
     text-transform: uppercase;
     display: flex;
     flex-wrap: wrap;
+    cursor: pointer;
   }
 .main-heading-info {
     font-family: OpenSans-bold, Arial, sans-serif;
@@ -542,20 +554,25 @@ margin-top: 24px;
     flex-direction: column;
     margin-bottom: 26px;
   }
-  .our_products::before {
-    content: "";
-    border: 3px solid #b59f5b;
-    position: absolute;
-    left: 15px;
-    right: 15px;
-    top: 257px;
-    bottom: 0;
-  }
   .product {
      padding-left: 20px;
      padding-right: 20px; 
      padding-bottom: 27px; 
+
   }
+  .product__body {
+    border: 3px solid #b59f5b;
+    margin-top: -38px;
+    padding-top: 38px;
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    z-index: 999;
+    min-height: 231px;
+  }
+
   .product__img {
       width: 100%;
   }
@@ -633,6 +650,9 @@ margin-top: 24px;
     margin-left: auto;
     margin-left: right;
     margin: auto;
+  }
+  .socials-item:hover {
+    border: 1px solid black;
   }
   .socials-item:nth-child(n+2){
    margin-left: 28px;
@@ -713,6 +733,10 @@ margin-top: 24px;
 .products {
   padding-left: 35px;
   padding-right: 35px;
+}
+.product__content {
+  z-index: 99999;
+  position: relative;
 }
 .all_products {
   display: flex;
